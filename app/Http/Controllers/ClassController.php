@@ -74,6 +74,7 @@ class ClassController extends Controller
     public function update(Request $request, ClassModel $classModel)
     {
         $classModel->update($request->all());
+        $classModel->save();
         return response()->json($classModel, Response::HTTP_OK);
     }
 
