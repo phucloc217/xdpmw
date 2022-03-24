@@ -74,7 +74,7 @@ class FacultyController extends Controller
      */
     public function update(Request $request, Faculty $faculty)
     {
-        return response()->json($request);
+        return $request;
 
         // try {
         //     $faculty->update($request->all());
