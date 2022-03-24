@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Faculty;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Validator;
 
 class FacultyController extends Controller
 {
@@ -73,9 +74,14 @@ class FacultyController extends Controller
      */
     public function update(Request $request, Faculty $faculty)
     {
-        $faculty->update($request->all());
-        $faculty->save();
-        return response()->json($faculty, Response::HTTP_OK);
+        try {
+            $faculty->update($request->all());
+            $faculty->save();
+            return response()->json($faculty, Response::HTTP_OK);
+        } catch (\Exception $e) {
+            $queryStatus = "Not success";
+            return response()->json($queryStatus);
+        }
     }
 
     /**
