@@ -74,14 +74,16 @@ class FacultyController extends Controller
      */
     public function update(Request $request, Faculty $faculty)
     {
-        try {
-            $faculty->update($request->all());
-            $faculty->save();
-            return response()->json($faculty, Response::HTTP_OK);
-        } catch (\Exception $e) {
-            $queryStatus = "Not success";
-            return response()->json($queryStatus);
-        }
+        return response()->json($request);
+
+        // try {
+        //     $faculty->update($request->all());
+        //     $faculty->save();
+        //     return response()->json($faculty, Response::HTTP_OK);
+        // } catch (\Exception $e) {
+        //     $queryStatus = "Not success";
+        //     return response()->json($queryStatus);
+        // }
     }
 
     /**
