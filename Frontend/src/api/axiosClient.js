@@ -1,9 +1,8 @@
-import axios from 'axios';
-
+import axios from "axios";
 const axiosClient = axios.create({
-    baseURL: 'http://localhost:3000',
-    headers: {
-        'content-type': 'application/json',
-    }
-})
-
+  baseURL: "https://xdpm.herokuapp.com/api",
+  headers: {
+    "Content-type": "application/json",
+  },
+});
+export default axiosClient;
